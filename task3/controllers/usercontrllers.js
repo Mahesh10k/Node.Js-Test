@@ -12,7 +12,8 @@ exports.getUsers=async(req,res)=>{
 
 exports.createUser=async(req,res)=>{
    try{
-    let data=await models.createUser(userDetails)
+    const userData = req.body;
+    let data=await models.createUser(userData)
     res.send(data)
    }catch(err){
     res.send(err)
